@@ -14,11 +14,16 @@ The objective was to replicate a common attack scenario including reconaissance,
 
 *Phase 1 - Reconnaissance* 
 
-I ran the following Nmap scan:
+I ran the following Nmap scan to find open ports:
 
 nmap -sS -T4 (target-ip)
 
 
+<img width="290" height="114" alt="NMap Scan Results" src="https://github.com/user-attachments/assets/4fc998fe-2e47-4924-af23-a2aa746dabcb" />
+
+From this I learned that the following ports were open: 135, 139, 445.
+
+445 is a good attack vector.
 
 
 
