@@ -9,6 +9,17 @@ I ran 3 virtual machines - an instance of Kali, Windows and Ubuntu with the open
 * SIEM Machine: Ubuntu running Wazuh
 
 **Attack Simulation**
-The objective was to replicate a common attack scenario including reconaissance, carried out my Nmap scans, and brute-force authentication attempts using Hydra
+
+The objective was to replicate a common attack scenario including reconaissance, carried out by Nmap scans, and brute-force authentication attempts using Hydra.
+
+*Phase 1 - Reconnaissance* 
+
+I ran the following Nmap scan:
+
+nmap -sS -T4 (target-ip)
+
+
+
+
 
 
