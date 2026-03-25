@@ -23,7 +23,13 @@ nmap -sS -T4 (target-ip)
 
 From this I learned that the following ports were open: 135, 139, 445.
 
-445 is a good attack vector.
+I identified port 445 (SMB) as a good attack vector
+
+*Phase 2 - Enumeration*
+
+Port 445 was identified as the attack surface of choice.
+
+
 
 
 
