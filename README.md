@@ -31,7 +31,13 @@ Port 445 was identified as the attack surface of choice. SMB (Server Message Blo
 
 I ran the following Nmap scan:
 
-nmap -p445 — script smb-protocols (target ip)
+nmap -p445 --script smb-enum-users,smb-enum-shares,smb-os-discovery <target-ip>
+
+This allowed me to quickly pull structured info
+
+and then I ran a more detailed scan with the following:
+
+enum4linux -a (target-ip)
 
 
 
