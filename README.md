@@ -27,7 +27,12 @@ I identified port 445 (SMB) as a good attack vector
 
 *Phase 2 - Enumeration*
 
-Port 445 was identified as the attack surface of choice.
+Port 445 was identified as the attack surface of choice. SMB (Server Message Block) Enumeration allows me to query for details such as users and groups.
+
+I ran the following Nmap scan:
+
+nmap -p445 — script smb-protocols (target ip)
+
 
 
 
