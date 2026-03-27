@@ -8,6 +8,37 @@ I ran 3 virtual machines - an instance of Kali, Windows and Ubuntu with the open
 * Target Machine: Windows 11
 * SIEM Machine: Ubuntu running Wazuh
 
+  **Attack Simulation**
+
+The objective was to replicate a common attack scenario including reconaissance, carried out by Nmap scans, and brute-force authentication attempts using Hydra.
+
+*Phase 1 - Reconnaissance* 
+
+I ran the following Nmap scan to find open ports:
+
+nmap -sS -T4 (target-ip)
+
+
+<img width="290" height="114" alt="NMap Scan Results" src="https://github.com/user-attachments/assets/4fc998fe-2e47-4924-af23-a2aa746dabcb" />
+
+From this I learned that the following ports were open: 135, 139, 445.
+
+I identified port 445 (SMB) as a good attack vector
+
+*Phase 2 - Enumeration*
+
+Port 445 was identified as the attack surface of choice. SMB (Server Message Block) Enumeration allows me to query for details such as users and groups.
+
+I ran the following Nmap scan:
+
+nmap -p445 --script smb-enum-users,smb-enum-shares,smb-os-discovery <target-ip>
+
+This allowed me to quickly pull structured info
+
+and then I ran a more detailed scan with the following:
+
+enum4linux -a (target-ip)
+
 
 
 
