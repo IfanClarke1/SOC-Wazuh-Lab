@@ -29,15 +29,13 @@ I identified port 445 (SMB) as a good attack vector
 
 Port 445 was identified as the attack surface of choice. SMB (Server Message Block) Enumeration allows me to query for details such as users and groups.
 
-I ran the following Nmap scan:
+I tried both Nmap and Enum4linux to see if I could find a list of user accounts and shared resources.
 
-nmap -p445 --script smb-enum-users,smb-enum-shares,smb-os-discovery <target-ip>
+These returned minimal information, indicating the target machine had restrictions in place to protect it against similar SMB queries
 
-This allowed me to quickly pull structured info
+*Phase 3 - Initial Access*
 
-and then I ran a more detailed scan with the following:
-
-enum4linux -a (target-ip)
+I was not able to find a list of users using enumeration but, as the focus of this lab is defence, I decided to go ahead with using the correct username for a brute force attack with Hydra
 
 
 
