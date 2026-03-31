@@ -41,7 +41,11 @@ These returned minimal information, indicating the target machine had restrictio
 
 *Phase 3 - Initial Access*
 
-I was not able to find a list of users using enumeration but, as the focus of this lab is defence, I decided to go ahead with using the correct username for a brute force attack with Hydra
+I was not able to find a list of users using enumeration but, as the focus of this lab is defence, I decided to go ahead with using the correct username for a brute force attack with Hydra. 
+
+I enabled RDP on my Windows login and then attempted a brute force with the following command:
+
+hydra -l Ifan -P /usr/share/wordlists/rockyou.txt (target-ip)
 
 
 
