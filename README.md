@@ -47,6 +47,18 @@ I enabled RDP on my Windows login and then attempted a brute force with the foll
 
 hydra -l Ifan -P /usr/share/wordlists/rockyou.txt (target-ip)
 
+ **Defense Simulation**
+ 
+The objective was to find evidence of these phases via Wazuh. 
+
+*Expected Security Events*
+
+The brute force activity generated:
+
+* Multiple failed login attempts
+* Windows authentication failure logs
+
+
 
 
 
