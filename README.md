@@ -59,6 +59,18 @@ The brute force activity generated:
 * Windows authentication failure logs
 
 
+*Wazuh Detection*
+
+Wazuh successfully detected brute force behaviour
+
+| Event ID | Description           |
+| -------- | --------------------- |
+| 4625     | Failed logon attempt  |
+| 4624     | Successful logon      |
+| 4776     | Credential validation |
+
+
+
 
 
 
