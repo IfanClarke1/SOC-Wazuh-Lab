@@ -47,6 +47,8 @@ I enabled RDP on my Windows login and then attempted a brute force with the foll
 
 hydra -l Ifan -P /usr/share/wordlists/rockyou.txt (target-ip)
 
+As I could not get this to work, I decided to just manually do some failed logins and then a successful login to simulate a brute force attack.
+
  **Defense Simulation**
  
 The objective was to find evidence of these phases via Wazuh. 
@@ -72,6 +74,11 @@ Wazuh successfully detected brute force behaviour
 **Key Takeaways**
 
 The first thing that struck me is how enumaration returned little to no information. From doing a little research, I discovered that Windows 11 restricts anonymous SMB access by default, which is a sensible measure. This means an attacker would need valid credentials before running the brute force, making the attack more difficult and costly.
+
+I could not get an RDP brute force to work and I realised I could just simulate the brute force by manually putting in a few wrong passwords and then a real one.
+
+
+
 
 
 
