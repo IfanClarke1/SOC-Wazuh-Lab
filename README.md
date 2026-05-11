@@ -1,5 +1,5 @@
 # SOC-Wazuh-Lab
-This project demonstrates a simulated SOC (Security Operations Centre) environment using Wazuh as the SIEM (Security Operations and Event Management) tool.
+This project demonstrates a simulated SOC (Security Operations Centre) environment using Wazuh as the SIEM (Security Incidents and Event Management) tool.
 I ran 3 virtual machines - an instance of Kali, Windows and Ubuntu with the open source SIEM Wazuh installed.
 
 **Setup**
