@@ -70,6 +70,7 @@ Wazuh successfully detected brute force behaviour
 | 4776     | Credential validation |
 
 **Key Takeaways**
+
 The first thing that struck me is how enumaration returned little to no information. From doing a little research, I discovered that Windows 11 restricts anonymous SMB access by default, which is a sensible measure. This means an attacker would need valid credentials before running the brute force, making the attack more difficult and costly.
 
 
