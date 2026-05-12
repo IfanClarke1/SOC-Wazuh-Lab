@@ -65,6 +65,9 @@ The brute force activity generated:
 
 Wazuh successfully detected brute force behaviour
 
+<img width="681" height="337" alt="image" src="https://github.com/user-attachments/assets/29f6860b-31ea-4873-9f5e-7e7bd5cfea4e" />
+
+
 | Event ID | Description           |
 | -------- | --------------------- |
 | 4625     | Failed logon attempt  |
