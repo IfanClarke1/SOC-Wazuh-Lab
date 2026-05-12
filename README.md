@@ -63,7 +63,7 @@ The brute force activity generated:
 
 *Wazuh Detection*
 
-Wazuh successfully detected brute force behaviour
+Wazuh created alerts for both the authentication failures and authentication successes
 
 <img width="681" height="337" alt="image" src="https://github.com/user-attachments/assets/29f6860b-31ea-4873-9f5e-7e7bd5cfea4e" />
 
