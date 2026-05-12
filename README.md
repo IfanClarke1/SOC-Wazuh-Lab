@@ -10,7 +10,7 @@ I ran 3 virtual machines - an instance of Kali, Windows and Ubuntu with the open
 
   **Attack Simulation**
 
-The objective was to replicate a common attack scenario including reconaissance, carried out by Nmap scans, and brute-force authentication attempts using Hydra.
+The objective was to replicate a common attack scenario including reconaissance, carried out by Nmap scans, and brute-force authentication attempts.
 
 *Phase 1 - Reconnaissance* 
 
@@ -41,13 +41,7 @@ These returned minimal information, indicating the target machine had restrictio
 
 *Phase 3 - Initial Access*
 
-I was not able to find a list of users using enumeration but, as the focus of this lab is defence, I decided to go ahead with using the correct username for a brute force attack with Hydra. 
-
-I enabled RDP on my Windows login and then attempted a brute force with the following command:
-
-hydra -l (username) -P /usr/share/wordlists/rockyou.txt (target-ip)
-
-As I could not get this to work, I decided to just manually do some failed logins and then a successful login to simulate a brute force attack.
+From here I decided to manually replicate a brute-force attack by trying a load of incorrect password attempts followed by a correct one
 
  **Defense Simulation**
  
@@ -83,8 +77,6 @@ Wazuh created alerts for both the authentication failures and authentication suc
 **Key Takeaways**
 
 The first thing that struck me is how enumaration returned little to no information. From doing a little research, I discovered that Windows 11 restricts anonymous SMB access by default, which is a sensible measure. This means an attacker would need valid credentials before running the brute force, making the attack more difficult and costly.
-
-I could not get an RDP brute force to work and I realised I could just simulate the brute force by manually putting in a few wrong passwords and then a real one.
 
 There is a lot of inbuilt good security measures in Windows 11 so the enumaration and brute force attempts I tried didn't work. Because of this, I had to go simple and try a load of wrong guessed passwords manually to recreate a brute force attack
 
