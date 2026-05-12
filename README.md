@@ -69,6 +69,9 @@ Wazuh successfully detected brute force behaviour
 
 <img width="688" height="401" alt="image" src="https://github.com/user-attachments/assets/7a7b89f7-6ce4-4877-9978-a45df6c91ab4" />
 
+<img width="686" height="403" alt="image" src="https://github.com/user-attachments/assets/bce8eb1e-9c5a-4e63-9b59-1c09cdd073c0" />
+
+
 
 
 | Event ID | Description           |
