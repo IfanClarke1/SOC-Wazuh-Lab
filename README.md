@@ -80,6 +80,7 @@ The first thing that struck me is how enumaration returned little to no informat
 
 I could not get an RDP brute force to work and I realised I could just simulate the brute force by manually putting in a few wrong passwords and then a real one.
 
+There is a lot of inbuilt good security measures in Windows 11 so the enumaration and brute force attempts I tried didn't work. Because of this, I had to go simple and try a load of wrong guessed passwords manually to recreate a brute force attack
 
 
 
