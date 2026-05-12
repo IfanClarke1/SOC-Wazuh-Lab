@@ -45,7 +45,7 @@ I was not able to find a list of users using enumeration but, as the focus of th
 
 I enabled RDP on my Windows login and then attempted a brute force with the following command:
 
-hydra -l Ifan -P /usr/share/wordlists/rockyou.txt (target-ip)
+hydra -l (username) -P /usr/share/wordlists/rockyou.txt (target-ip)
 
 As I could not get this to work, I decided to just manually do some failed logins and then a successful login to simulate a brute force attack.
 
