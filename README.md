@@ -41,38 +41,23 @@ These returned minimal information, indicating the target machine had restrictio
 
 *Phase 3 - Initial Access*
 
-From here I decided to manually replicate a brute-force attack by trying a load of incorrect password attempts followed by a correct one
+From here I decided to manually replicate a brute-force attack by trying a series of incorrect password attempts.
 
  **Defense Simulation**
- 
-The objective was to find evidence of these phases via Wazuh. 
 
-*Expected Security Events*
+ The objective was to find evidence of the brute force in Wazuh.
 
-The brute force activity generated:
+ First step was to create a rule for an alert in Wazuh.
 
-* Multiple failed login attempts
-* Windows authentication failure logs
+ I added the following to the Wazuh rules:
 
-
-*Wazuh Detection*
-
-Wazuh created alerts for both the authentication failures and authentication successes
-
-<img width="681" height="337" alt="image" src="https://github.com/user-attachments/assets/29f6860b-31ea-4873-9f5e-7e7bd5cfea4e" />
-
-<img width="688" height="401" alt="image" src="https://github.com/user-attachments/assets/7a7b89f7-6ce4-4877-9978-a45df6c91ab4" />
-
-<img width="686" height="403" alt="image" src="https://github.com/user-attachments/assets/bce8eb1e-9c5a-4e63-9b59-1c09cdd073c0" />
-
-
-
-
-| Event ID | Description           |
-| -------- | --------------------- |
-| 4625     | Failed logon attempt  |
-| 4624     | Successful logon      |
-| 4776     | Credential validation |
+ <group name="windows,bruteforce">
+  <rule id="100100" level="10" frequency="5" timeframe="60">
+    <if_matched_sid>60112</if_matched_sid>
+    <description>5 Windows failed logons in 60s — possible brute force</description>
+    <group>bruteforce,windows</group>
+  </rule>
+</group>
 
 **Key Takeaways**
 
