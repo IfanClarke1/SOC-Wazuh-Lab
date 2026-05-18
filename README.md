@@ -51,13 +51,15 @@ From here I decided to manually replicate a brute-force attack by trying a serie
 
  I added the following to the Wazuh rules:
 
- <group name="windows,bruteforce">
+ "<group name="windows,bruteforce">
   <rule id="100100" level="10" frequency="5" timeframe="60">
     <if_matched_sid>60112</if_matched_sid>
     <description>5 Windows failed logons in 60s — possible brute force</description>
     <group>bruteforce,windows</group>
   </rule>
-</group>
+</group>"
+
+This meant that an alert would be created if 5 incorrect password attempts were made within 60 seconds
 
 **Key Takeaways**
 
