@@ -18,7 +18,6 @@ I ran the following Nmap scan to find open ports:
 
 nmap -sS -T4 (target-ip)
 
-
 <img width="290" height="114" alt="NMap Scan Results" src="https://github.com/user-attachments/assets/4fc998fe-2e47-4924-af23-a2aa746dabcb" />
 
 From this I learned that the following ports were open: 135, 139, 445.
@@ -37,8 +36,6 @@ These returned minimal information, indicating the target machine had restrictio
 
 <img width="719" height="418" alt="Enum4Linux Scan Results" src="https://github.com/user-attachments/assets/ea391d76-5fa0-495c-84e6-0d987927af94" />
 
-
-
 *Phase 3 - Initial Access*
 
 From here I decided to manually replicate a brute-force attack by trying a series of incorrect password attempts.
@@ -53,13 +50,13 @@ From here I decided to manually replicate a brute-force attack by trying a serie
 
 <img width="424" height="74" alt="image" src="https://github.com/user-attachments/assets/a50da056-ce30-48ed-9949-e615469aea77" />
 
-
 This meant that an alert would be created if 5 incorrect password attempts were made within 60 seconds
 
-After the brute force was simulated the following alert appeared in Wazuh
+After the brute force was simulated the following alert appeared in Wazuh, as expected
 
 <img width="677" height="103" alt="image" src="https://github.com/user-attachments/assets/b128729d-0755-49b6-925e-304600ec6d51" />
 
+This means Wazuh successfully detected the brute force activity via integration with the Windows Security Event log. 5 instances of rule '60122' (a logon failure in Wazuh).
 
 **Key Takeaways**
 
