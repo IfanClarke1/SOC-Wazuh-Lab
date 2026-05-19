@@ -56,6 +56,11 @@ From here I decided to manually replicate a brute-force attack by trying a serie
 
 This meant that an alert would be created if 5 incorrect password attempts were made within 60 seconds
 
+After the brute force was simulated the following alert appeared in Wazuh
+
+<img width="677" height="103" alt="image" src="https://github.com/user-attachments/assets/b128729d-0755-49b6-925e-304600ec6d51" />
+
+
 **Key Takeaways**
 
 The first thing that struck me is how enumaration returned little to no information. From doing a little research, I discovered that Windows 11 restricts anonymous SMB access by default, which is a sensible measure. This means an attacker would need valid credentials before running the brute force, making the attack more difficult and costly.
