@@ -38,7 +38,8 @@ These returned minimal information, indicating the target machine had restrictio
 
 *Phase 3 - Initial Access*
 
-From here I decided to manually replicate a brute-force attack by trying a series of incorrect password attempts.
+From here I decided to manually replicate a brute-force attack by trying a series of incorrect password attempts in a span of 60 seconds. At first I attempted the brute force via Hydra trying a series of passwords on both RDP and SMB. I faced practical limitations due to the lack of information gathered from enumaration and so I pivotted to manually typing in incorrect passwords in Windows.
+
 
  **Defense Simulation**
 
@@ -56,7 +57,8 @@ After the brute force was simulated the following alert appeared in Wazuh, as ex
 
 <img width="677" height="103" alt="image" src="https://github.com/user-attachments/assets/b128729d-0755-49b6-925e-304600ec6d51" />
 
-This means Wazuh successfully detected the brute force activity via integration with the Windows Security Event log. 5 instances of rule '60122' (a logon failure in Wazuh).
+This means Wazuh successfully detected the brute force activity via integration with the Windows Security Event log. 5 instances of rule '60122' (a logon failure in Wazuh) running in the space of 60 seconds set off my custom rule.
+
 
 **Key Takeaways**
 
