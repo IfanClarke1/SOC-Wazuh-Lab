@@ -8,7 +8,12 @@ I ran 3 virtual machines - an instance of Kali, Windows and Ubuntu with the open
 * Target Machine: Windows 11
 * SIEM Machine: Ubuntu running Wazuh
 
-  **Attack Simulation**
+**Network Diagram**
+
+<img width="375" height="250" alt="Network Diagram Image" src="https://github.com/user-attachments/assets/5fd5f5e6-4bc8-4bc1-9b96-12bb0b81bc89" />
+
+
+**Attack Simulation**
 
 The objective was to replicate a common attack scenario including reconaissance, carried out by Nmap scans, and brute-force authentication attempts.
 
