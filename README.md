@@ -103,6 +103,11 @@ This approach reflects how detection engineering works in practice — default r
 
 One consideration I noted: the 60-second window is well-suited for detecting fast, automated brute force (as Hydra produces), but a lower-velocity attack would evade this rule. A production environment would layer this with additional rules and policies. 
 
+*SOC Handover Notes*
+At 18:00, Wazuh generated a high-severity alert for repeated failed authentication against the Windows 11 host. Investigation of the underlying Windows Event logs confirmed a brute force attack. A total of 5 failed logon attempts (Event ID 4625) were recorded over approximately 45 seconds, consistent with automated tooling.
+
+Recommended Actions: Implement or edit accoun lockout policy, reset credentials for the targeted account.
+
 
 **Key Takeaways**
 
