@@ -94,6 +94,7 @@ Event ID 4625 — Failed Logon
 This was the primary signal. The logs showed a high volume of 4625 events in rapid succession, all originating from the same source IP and all targeting the same user account.
 
 *Custom Rule Assessment*
+
 The detection was made possible by a custom rule I created in `local_rules.xml` that I wrote to go alongside Wazuh's default behaviour. Wazuh's out-of-the-box rules will flag individual failed logons, but do not correlate them into a brute force pattern with configurable thresholds.
 
 My rule monitored for repeated Event ID 4625 events, set a threshold of 5 failures, and applied a 60-second time window. When that threshold was crossed, Wazuh generated the alert that opened the investigation.
