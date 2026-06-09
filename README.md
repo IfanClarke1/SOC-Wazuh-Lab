@@ -37,9 +37,9 @@ I tried both Nmap and Enum4linux to see if I could find a list of user accounts 
 
 These returned minimal information, indicating the target machine had restrictions in place to protect it against similar SMB queries
 
-<img width="720" height="415" alt="Nmap Enumeration Results" src="https://github.com/user-attachments/assets/959a2928-96b6-4d02-a1a9-43b21a6ee96f" />
+<img width="360" height="208" alt="Nmap Enumeration Results" src="https://github.com/user-attachments/assets/959a2928-96b6-4d02-a1a9-43b21a6ee96f" />
 
-<img width="719" height="418" alt="Enum4Linux Scan Results" src="https://github.com/user-attachments/assets/ea391d76-5fa0-495c-84e6-0d987927af94" />
+<img width="360" height="209" alt="Enum4Linux Scan Results" src="https://github.com/user-attachments/assets/ea391d76-5fa0-495c-84e6-0d987927af94" />
 
 *Phase 3 - Initial Access*
 
