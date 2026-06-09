@@ -62,7 +62,37 @@ After the brute force was simulated the following alert appeared in Wazuh, as ex
 
 <img width="677" height="103" alt="image" src="https://github.com/user-attachments/assets/b128729d-0755-49b6-925e-304600ec6d51" />
 
-This means Wazuh successfully detected the brute force activity via integration with the Windows Security Event log. 5 instances of rule '60122' (a logon failure in Wazuh) running in the space of 60 seconds set off my custom rule.
+This means Wazuh successfully detected the brute force activity via integration with the Windows Security Event log. 5 instances of rule '60122' (a logon failure in Wazuh) running in the space of 60 seconds set off my custom rule. 
+
+**Investigation Walkthrough**
+
+
+*Overview*
+
+During a controlled attack simulation, I identified and investigated a brute force authentication attack against a Windows 11 host. Wazuh created an alert based on a rule I created that established 5 incorrect passwords in 60 seconds was likely to be suspicious in nature. The following documents my investigation process as it would appear in a real SOC triage workflow.
+
+*Initial Alert Triage*
+
+The investigation began when Wazuh generated an alert on the dashboard. The alert was triggered by a custom rule I had created in `local_rules.xml`, set to fire when five or more failed authentication attempts were recorded against a single host within a 60-second window.
+
+The alert presented with the following characteristics:
+
+- Rule ID: 100100 (local_rules.xml)
+- Alert level: 13 (high)
+- Rule description: 5 failed Windows logons in 60s - possible brute force
+- Destination IP: 192.168.x.x (Windows 11 — target VM)
+- Timeframe: Repeated failures across approximately 45 seconds
+- MITRE ATT&CK technique: T1110.001 — Brute Force: Password Guessing
+
+The volume and speed of failures distinguished this as a user mistyping their password. A genuine failed login is usually only one or two events with a little more time in-between. 
+
+*Event Log Analysis*
+
+I then went from Wazuh to the Windows logs that Wazuh was reacting to. I found the following event ID 5 times in quick succession:
+
+Event ID 4625 — Failed Logon
+
+This was the primary signal. The logs showed a high volume of 4625 events in rapid succession, all originating from the same source IP and all targeting the same user account.
 
 
 **Key Takeaways**
